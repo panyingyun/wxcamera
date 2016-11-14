@@ -6,7 +6,8 @@ import (
 )
 
 const (
-	APIURL    = "http://wx.michaelapp.com"
+	APPURL    = "http://wx.michaelapp.com/"
+	APPTOKEN  = "michaelapp"
 	APPID     = "wx5f2139191e42b3f0"
 	APPSECRET = "104ed693b599b24df164fdb2b9cb5cd4"
 )
