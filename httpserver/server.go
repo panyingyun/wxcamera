@@ -30,11 +30,16 @@ func makeSignature(timestamp, nonce string) string {
 //For Server Get
 func WXServerGet(ctx *macaron.Context) string {
 	log.Info("WXServerGet begin")
-	timestamp := ctx.Params("timestamp")
-	nonce := ctx.Params("nonce")
-	echostr := ctx.Params("echostr")
-	signatureIn := ctx.Params("signature")
-
+	timestamp := ctx.Query("timestamp")
+	nonce := ctx.Query("nonce")
+	echostr := ctx.Query("echostr")
+	signatureIn := ctx.Query("signature")
+	log.WithFields(log.Fields{
+		"timestamp":   timestamp,
+		"nonce":       nonce,
+		"echostr":     echostr,
+		"signatureIn": signatureIn,
+	}).Info("WXServerGet")
 	signaturegen := makeSignature(timestamp, nonce)
 	if signaturegen != signatureIn {
 		log.Error("Validata sign fail!!!")
