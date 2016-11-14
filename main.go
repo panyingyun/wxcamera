@@ -33,7 +33,7 @@ func main() {
 		cli.StringFlag{
 			Name:   "server-url",
 			Usage:  "server-url",
-			Value:  "127.0.0.1:8901",
+			Value:  "127.0.0.1:8902",
 			EnvVar: "SERVER_URL",
 		},
 	}
